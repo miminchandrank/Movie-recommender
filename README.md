@@ -1,39 +1,49 @@
 # 🎬 Movie Recommendation System 🚀
 
-Welcome to the **Movie Recommendation System**, a machine learning-powered project designed to provide personalized movie suggestions based on user preferences. Built with Python and Streamlit, this content-based recommendation engine offers an interactive and intuitive user experience.
+Welcome to the **Movie Recommendation System**, a machine learning-powered project designed to deliver personalized movie suggestions based on user preferences. Built with **Python** and **Streamlit**, this content-based recommender system offers a fast and interactive user experience.
+
+📽️ **Demo Video**: [Watch on LinkedIn](https://www.linkedin.com/posts/miminchandrank_machinelearning-datascience-python-activity-7304875045502210048-5hmX?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFD4aN8BBSizqogKnOr2eBg_WSmXdqUej4w)
+
+---
 
 ## 🔍 Overview
 
-This project uses a **content-based filtering approach** to recommend movies that are similar to the user's choice. The similarity between movies is computed using features like genres, keywords, cast, and more, enabling tailored suggestions.
+This project utilizes a **content-based filtering** approach to recommend movies similar to the one selected by the user. It analyzes metadata such as **genres**, **keywords**, **cast**, and **crew**, then uses **cosine similarity** to identify the most relevant movies.
+
+---
 
 ## 🧠 Key Features
 
-- ✅ **Content-Based Filtering**: Uses cosine similarity to find movies similar to the user's selection.
-- ✅ **Streamlit UI**: Lightweight and elegant interface for interacting with the recommender.
-- ✅ **Real-Time Suggestions**: Users can select a movie and instantly get a list of recommended titles.
-- ✅ **Clean and Minimal Design**: Engaging, user-friendly design built with Streamlit components.
+- ✅ **Content-Based Filtering**: Computes similarity using a custom textual feature vector.
+- ✅ **Real-Time Recommendations**: Instantly suggests similar movies based on selection.
+- ✅ **Streamlit UI**: Clean and intuitive web interface for a smooth user experience.
+- ✅ **Poster Fetching (Optional)**: Extendable with IMDb or TMDb API for richer visual output.
+
+---
 
 ## 📦 Tech Stack
 
 - **Python**
-- **Pandas, NumPy, Scikit-learn** – Data preprocessing and ML modeling
-- **Streamlit** – Web app interface
-- **Pickle** – Saving the similarity model
-- **IMDb/TMDB API (optional)** – For fetching posters and details (if integrated)
+- **Pandas**, **NumPy** – Data manipulation
+- **Scikit-learn** – Vectorization and cosine similarity
+- **Streamlit** – Web-based user interface
+- **Pickle** – Model serialization
+- *(Optional)* **TMDb API / IMDb API** – For movie posters and metadata
+
+---
 
 ## 🚀 How It Works
 
-1. **Data Preprocessing**:
-   - Clean and merge metadata (genres, cast, crew, keywords, etc.).
-   - Create a new feature by combining important textual information.
-   - Use CountVectorizer and cosine similarity for recommendations.
+### 🔧 1. Data Preprocessing
+- Merge important metadata (title, genres, keywords, cast, crew)
+- Create a unified **"tags"** column
+- Clean and normalize text for vectorization
 
-2. **Similarity Model**:
-   - Vectorize the combined textual data.
-   - Compute the cosine similarity matrix.
-   - Recommend top N similar movies based on input.
+### 📐 2. Model Building
+- Use `CountVectorizer` to convert text to vectors
+- Apply **cosine similarity** to calculate closeness between movies
+- Store similarity matrix for efficient lookup
 
-3. **Web Interface**:
-   - Select a movie from the dropdown.
-   - Display recommendations with posters and titles.
-
+### 🖥️ 3. Web Interface
+- Movie selector dropdown via Streamlit
+- Display **Top 5 recommended movies** with optional poster thumbnails
